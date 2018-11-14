@@ -23,7 +23,8 @@ const indexRoutes = require("./routes/index"),
       commentRoutes = require("./routes/comments");
       
 // DB Connect
-mongoose.connect('mongodb://localhost/yelp_camp_v9');
+// mongoose.connect('mongodb://localhost/yelp_camp_v9');
+mongoose.connect('mongodb://cobimr:modesto19juan73@ds121321.mlab.com:21321/yelpcamp');
 
 // View Engine
 app.set("view engine", "ejs");
@@ -60,7 +61,7 @@ app.use((req, res, next) => {
     next();
 });
 
-seedDB(); // Seed the DB
+// seedDB(); // Seed the DB
 
 // Routes Setup
 app.use('/', indexRoutes);
