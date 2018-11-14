@@ -1,0 +1,17 @@
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .user-image {
+    max-width: 200px;
+    padding-top: 1rem;
+    border-radius: 50%;
+}
+
+.delete-form {
+    display: inline;
+}
