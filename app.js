@@ -10,7 +10,7 @@ const express        = require("express"),
       methodOverride = require("method-override");
       
 // Requiring ENV Variables
-require('dotenv').config();
+// require('dotenv').config();
       
 // Schema/Models DB
 const Campground = require("./models/campground"),
