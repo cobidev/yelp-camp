@@ -9,8 +9,10 @@ const express        = require("express"),
       LocalStrategy  = require("passport-local"),
       methodOverride = require("method-override");
       
-// Requiring ENV Variables
-// require('dotenv').config();
+// Requiring ENV Variables (development mode)
+if(app.get('env') === 'development') {
+  require('dotenv').config();
+}
       
 // Schema/Models DB
 const Campground = require("./models/campground"),
@@ -23,8 +25,7 @@ const indexRoutes = require("./routes/index"),
       commentRoutes = require("./routes/comments");
       
 // DB Connect
-// mongoose.connect('mongodb://localhost/yelp_camp_v9');
-mongoose.connect('mongodb://cobimr:modesto19juan73@ds121321.mlab.com:21321/yelpcamp');
+mongoose.connect(process.env.DATABASEURL);
 
 // View Engine
 app.set("view engine", "ejs");
