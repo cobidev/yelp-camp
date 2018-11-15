@@ -25,7 +25,8 @@ const indexRoutes = require("./routes/index"),
       commentRoutes = require("./routes/comments");
       
 // DB Connect
-mongoose.connect(process.env.DATABASEURL);
+const url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v9";
+mongoose.connect(url);
 
 // View Engine
 app.set("view engine", "ejs");
