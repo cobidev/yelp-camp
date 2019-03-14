@@ -26,7 +26,8 @@ const indexRoutes = require("./routes/index"),
       
 // DB Connect
 const url = process.env.DATABASEURL || "mongodb://localhost:27017/yelp-camp";
-mongoose.connect(url);
+mongoose.set('useCreateIndex', true);
+mongoose.connect(url, { useNewUrlParser: true});
 
 // View Engine
 app.set("view engine", "ejs");
